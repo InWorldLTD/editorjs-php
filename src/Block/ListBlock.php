@@ -24,7 +24,7 @@ final class ListBlock extends Block
          */
         public readonly string $style,
         /**
-         * @var list<string> $items
+         * @var list<array{content: string}> $items
          */
         public readonly array $items,
     ) {

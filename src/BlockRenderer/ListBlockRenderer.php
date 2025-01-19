@@ -20,7 +20,7 @@ final class ListBlockRenderer extends GenericBlockRenderer
         UnsupportedBlockException::assert($this->supports($block), $block, $this);
 
         return (new HtmlElement($block->tag, ...array_map(
-            fn (string $item) => HtmlElement::li($item)->withClass($this->getClassOption('itemClass')),
+            fn (array $item) => HtmlElement::li($item['content'])->withClass($this->getClassOption('itemClass')),
             $block->items,
         )))
             ->withClass($this->getClassOption('class'))
